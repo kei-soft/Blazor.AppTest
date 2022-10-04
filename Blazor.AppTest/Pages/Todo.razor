@@ -25,6 +25,15 @@
     private List<TodoItem> todos = new();
     private string? newTodo;
 
+    protected override void OnInitialized()
+    {
+        todos.AddRange(new List<TodoItem>
+        {
+            new TodoItem { Content = "Homework", IsDone = true},
+            new TodoItem { Content = "Health", IsDone = false },
+        });
+    }
+
     private void AddTodo()
     {
         if (!string.IsNullOrWhiteSpace(newTodo))
