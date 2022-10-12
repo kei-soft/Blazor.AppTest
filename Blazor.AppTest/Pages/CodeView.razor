@@ -1,0 +1,22 @@
+﻿@page "/code"
+@inject IJSRuntime JSRuntime;
+
+<h3>Code</h3>
+
+<pre class="line-numbers">
+<code class="language-csharp">
+    var hello = "";
+    </code>
+</pre>
+
+@code {
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("initPrism");
+        }
+    }
+
+}

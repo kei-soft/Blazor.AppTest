@@ -1,7 +1,5 @@
 using Blazor.AppTest.Data;
-
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using Blazor.AppTest.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+// Register the pizzas service
+builder.Services.AddSingleton<PizzaService>();
 
 var app = builder.Build();
 
