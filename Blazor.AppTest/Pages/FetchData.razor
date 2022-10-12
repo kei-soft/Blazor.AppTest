@@ -9,6 +9,9 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
+<h5>Search Summary</h5>
+<Search OnSearchChanged="SearchData" />
+
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
@@ -39,10 +42,17 @@ else
 }
 
 @code {
+    private WeatherForecast[]? originForecasts;
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        originForecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+        forecasts = originForecasts.ToArray();
+    }
+
+    private void SearchData(string searchText)
+    {
+        forecasts = originForecasts?.Where(c => c.Summary.ToUpper().Contains(searchText.ToUpper())).ToArray();
     }
 }
