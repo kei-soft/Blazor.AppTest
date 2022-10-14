@@ -1,0 +1,29 @@
+﻿@page "/treeBinding"
+
+@using Blazor.RadzenTest.Data
+
+<h3>TreeBindingPage</h3>
+
+<RadzenTree Data="@menus">
+    <RadzenTreeLevel TextProperty="MenuName" ChildrenProperty="MenuItems" />
+    <RadzenTreeLevel TextProperty="MenuName" HasChildren="@((menuItem) => false)" />
+</RadzenTree>
+
+@code {
+    IEnumerable<MenuItem>? menus;
+
+    protected override void OnInitialized()
+    {
+        MenuItem parent1 = new MenuItem() { MenuID = 1, MenuName = "부모1", MenuDescription = "부모1입니다." };
+        MenuItem child1 = new MenuItem() { MenuID = 11, MenuName = "자식1", MenuDescription = "자식1입니다." };
+        MenuItem child2 = new MenuItem() { MenuID = 12, MenuName = "자식2", MenuDescription = "자식2입니다." };
+        parent1.MenuItems = new List<MenuItem>() { child1, child2 };
+
+        MenuItem parent2 = new MenuItem() { MenuID = 2, MenuName = "부모2", MenuDescription = "부모2입니다." };
+        MenuItem child3 = new MenuItem() { MenuID = 13, MenuName = "자식3", MenuDescription = "자식3입니다." };
+        MenuItem child4 = new MenuItem() { MenuID = 14, MenuName = "자식4", MenuDescription = "자식4입니다." };
+        parent2.MenuItems = new List<MenuItem>() { child3, child4 };
+
+        menus = new List<MenuItem>() { parent1, parent2 };
+    }
+}

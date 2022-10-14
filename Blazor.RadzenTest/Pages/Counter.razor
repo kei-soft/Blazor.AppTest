@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@using Blazor.RadzenTest.Services
+@inject PublicScopeService mms
 
 <PageTitle>Counter</PageTitle>
 
@@ -8,11 +10,21 @@
 
 <RadzenButton Click="@IncrementCount" Text="Click me"></RadzenButton>
 
+<RadzenButton Click="@MoveMenu" Text="Fetch Menu Move"></RadzenButton>
+
 @code {
     private int currentCount = 0;
 
     private void IncrementCount()
     {
         currentCount++;
+    }
+
+    private void MoveMenu()
+    {
+        if (mms["NavMenu"] is NavMenu navMenu)
+        {
+            navMenu.NavigatePage("fetchdata");
+        }
     }
 }

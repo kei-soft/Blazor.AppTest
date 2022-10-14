@@ -1,4 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@using Blazor.RadzenTest.Services
+@inject PublicScopeService mms
+@inject NavigationManager Navigation
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Blazor.RadzenTest</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -23,6 +27,10 @@
             <li class="rz-navigation-item">
                 <RadzenPanelMenuItem Text="Fetch Data" Icon="zoom_out" Path="fetchdata" />
             </li>
+
+            <li class="rz-navigation-item">
+                <RadzenPanelMenuItem Text="Tree Binding" Icon="zoom_in" Path="treeBinding" />
+            </li>
         </ul>
     </RadzenPanelMenu>
 </div>
@@ -37,4 +45,13 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    public void NavigatePage(string href)
+    {
+        Navigation.NavigateTo(href);
+    }
+}
+
+@{
+    mms["NavMenu"] = this;
 }
