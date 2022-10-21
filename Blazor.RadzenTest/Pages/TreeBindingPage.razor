@@ -5,8 +5,7 @@
 <h3>TreeBindingPage</h3>
 
 <RadzenTree Data="@menus">
-    <RadzenTreeLevel TextProperty="MenuName" ChildrenProperty="MenuItems" />
-    <RadzenTreeLevel TextProperty="MenuName" HasChildren="@((menuItem) => false)" />
+    <RadzenTreeLevel TextProperty="MenuName" ChildrenProperty="MenuItems" HasChildren="@((menuItem) => ((MenuItem)menuItem).MenuItems != null)" />
 </RadzenTree>
 
 @code {
@@ -24,6 +23,8 @@
         MenuItem child4 = new MenuItem() { MenuID = 14, MenuName = "자식4", MenuDescription = "자식4입니다." };
         parent2.MenuItems = new List<MenuItem>() { child3, child4 };
 
-        menus = new List<MenuItem>() { parent1, parent2 };
+        MenuItem parent3 = new MenuItem() { MenuID = 3, MenuName = "부모3", MenuDescription = "부모3입니다." };
+
+        menus = new List<MenuItem>() { parent1, parent2, parent3 };
     }
 }
