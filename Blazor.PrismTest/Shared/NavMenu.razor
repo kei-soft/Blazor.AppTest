@@ -1,9 +1,6 @@
 ﻿@using Blazor.PrismTest.Events
 @using Prism.Events
 
-@inject IEventAggregator ea
-@inject NavigationManager navigationManager
-
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">Blazor.PrismTest</a>
@@ -38,14 +35,15 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
-    //[Inject]
-    //private EventAggregator ea { get; set; }
+    [Inject]
+    private IEventAggregator ea { get; set; }
 
-    //[Inject]
-    //private NavigationManager navigationManager { get; set; }
+    [Inject]
+    private NavigationManager navigationManager { get; set; }
 
     protected override void OnInitialized()
     {
+        // TestEvent 구독 처리
         ea.GetEvent<TestEvent>().Subscribe(TestMethod);
     }
 
@@ -56,7 +54,7 @@
 
     private void TestMethod(string arg)
     {
+        // Publish 시 메뉴 이동 처리
         navigationManager.NavigateTo("fetchdata");
     }
-
 }

@@ -1,7 +1,6 @@
 ﻿@page "/counter"
 @using Blazor.PrismTest.Events
 @using Prism.Events
-@inject IEventAggregator ea
 
 <PageTitle>Counter</PageTitle>
 
@@ -10,13 +9,13 @@
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
-<button class="btn btn-primary" @onclick="PublicMoveMenu">PUBLIC Move Menu</button>
+<button class="btn btn-primary" @onclick="PublicMoveMenu">Publish Move Menu</button>
 
 @code {
     private int currentCount = 0;
 
-    //[Inject]
-    //private EventAggregator ea { get; set; }
+    [Inject]
+    private IEventAggregator ea { get; set; }
 
     private void IncrementCount()
     {
@@ -25,6 +24,7 @@
 
     private void PublicMoveMenu()
     {
+        // TestEvent Publish
         ea.GetEvent<TestEvent>().Publish("MOVEMENU");
     }
 }
