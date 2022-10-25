@@ -1,0 +1,14 @@
+﻿@page "/mvvmpage"
+@using Blazor.PrismTest.ViewModels
+
+@inject MvvmVewModel viewmodel
+
+<h3>MvvmPage</h3>
+
+<p role="status">Current count: @viewmodel.Count</p>
+
+<button class="btn btn-primary" @onclick="viewmodel.IncrementCount">Click me</button>
+
+@code {
+
+}

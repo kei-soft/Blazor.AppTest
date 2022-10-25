@@ -1,4 +1,5 @@
 using Blazor.PrismTest;
+using Blazor.PrismTest.ViewModels;
 
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -13,5 +14,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 // EventAggregator 종속성 주입
 builder.Services.AddScoped<IEventAggregator, EventAggregator>();
+
+builder.Services.AddScoped<MvvmVewModel>();
 
 await builder.Build().RunAsync();

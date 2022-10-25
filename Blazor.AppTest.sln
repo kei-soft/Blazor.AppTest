@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.AppTest", "Blazor.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.RadzenTest", "Blazor.RadzenTest\Blazor.RadzenTest.csproj", "{E833FAE5-E528-4AA7-86F5-074E98EB91C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.PrismTest", "Blazor.PrismTest\Blazor.PrismTest.csproj", "{BFC2B8AB-AB11-41DA-ABEF-C418B8F19F6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.PrismTest", "Blazor.PrismTest\Blazor.PrismTest.csproj", "{BFC2B8AB-AB11-41DA-ABEF-C418B8F19F6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
