@@ -59,7 +59,10 @@
 
     private void TestMethod(string arg)
     {
-        // Publish 시 메뉴 이동 처리
-        navigationManager.NavigateTo("fetchdata");
+        if (arg == "MOVEMENU")
+        {
+            // Publish 시 메뉴 이동 처리
+            navigationManager.NavigateTo("fetchdata");
+        }
     }
 }
