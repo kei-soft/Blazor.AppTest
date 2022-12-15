@@ -1,0 +1,71 @@
+﻿@page "/work"
+@using Blazor.MvvmTest.ViewModels
+
+@inject WorkViewModel viewmodel
+
+<PageTitle>Work Management</PageTitle>
+
+<h1>Work Management</h1>
+
+<EditForm Model="@viewmodel.CurrentWorkItem" OnValidSubmit="@viewmodel.AddCommand">
+    <div class="col-4">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <InputText class="form-control" id="title" @bind-Value=@viewmodel.CurrentWorkItem.Title />
+        </div>
+        <div class="form-group">
+            <label for="date">StartDate</label>
+            <InputDate class="form-control" id="date" @bind-Value=@viewmodel.CurrentWorkItem.StartTime />
+        </div>
+        <div class="form-group">
+            <label for="date">EndDate</label>
+            <InputDate class="form-control" id="date" @bind-Value=@viewmodel.CurrentWorkItem.EndTime />
+        </div>
+        <div class="form-group">
+            <label for="notes">Content</label>
+            <InputTextArea class="form-control" id="notes" @bind-Value=@viewmodel.CurrentWorkItem.Content />
+        </div>
+        <div class="form-check">
+            <InputCheckbox class="form-check-input" id="done" @bind-Value=@viewmodel.CurrentWorkItem.IsDone />
+            <label for="done" class="form-check-label">Done</label>
+        </div>
+        <button type="submit" class="btn btn-primary" disabled="@viewmodel.IsBusy">Save</button>
+    </div>
+</EditForm>
+
+<hr/>
+
+@if (viewmodel.WorkItemList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table" style="background-color: #E7E9EB">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>StartTime</th>
+                <th>Endtime</th>
+                <th>Done</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var workItem in viewmodel.WorkItemList)
+            {
+                <tr>
+                    <td>@workItem.Title</td>
+                    <td>@workItem.StartTime.ToShortDateString()</td>
+                    <td>@workItem.EndTime.ToShortDateString()</td>
+                    <td>
+                        @(workItem.IsDone ? "완료" : "미완료")
+                    </td>
+                    <td>
+                        <button disabled="@workItem.IsDone" class="btn @(workItem.IsDone ? "btn-secondary" : "btn-primary")" @onclick="@(() => viewmodel.SetCurrentItem(workItem))">Edit</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
