@@ -1,3 +1,0 @@
-﻿window.initPrism = () => {
-  Prism.highlightAll();
-};
