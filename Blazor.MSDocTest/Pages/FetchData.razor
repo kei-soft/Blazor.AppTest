@@ -1,23 +1,15 @@
 ﻿@page "/fetchdata"
+@inject HttpClient Http
 
 <PageTitle>Weather forecast</PageTitle>
 
-@using Blazor.AppTest.Data
-@inject WeatherForecastService ForecastService
-
-@implements IDisposable
-
 <h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from a service.</p>
-
-<h5>Search Summary</h5>
-<Search OnSearchChanged="SearchData" />
+<p>This component demonstrates fetching data from the server.</p>
 
 @if (forecasts == null)
 {
     <p><em>Loading...</em></p>
-    <div class="spinner"></div>
 }
 else
 {
@@ -45,31 +37,21 @@ else
 }
 
 @code {
-    private WeatherForecast[]? originForecasts;
     private WeatherForecast[]? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        // 데이터 비동기 처리
-        await Task.Run(LoadData);
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
     }
 
-    private async void LoadData()
+    public class WeatherForecast
     {
-        // Test Sleep
-        System.Threading.Thread.Sleep(2000);
-        originForecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-        forecasts = originForecasts.ToArray();
-    }
+        public DateTime Date { get; set; }
 
-    private void SearchData(string searchText)
-    {
-        forecasts = originForecasts?.Where(c => c.Summary.ToUpper().Contains(searchText.ToUpper())).ToArray();
-    }
+        public int TemperatureC { get; set; }
 
-    // IDisposable 처리
-    public void Dispose()
-    {
-        originForecasts = null;
+        public string? Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
     }
 }
