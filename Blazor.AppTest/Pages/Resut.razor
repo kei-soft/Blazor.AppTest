@@ -1,0 +1,8 @@
+﻿@using Blazor.AppTest.Components
+@using Blazor.AppTest.Constants
+
+@inherits ResultComponent
+
+<h2>Resut Page</h2>
+<button class="btn btn-primary">@CounterState.Value</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Increment</button>

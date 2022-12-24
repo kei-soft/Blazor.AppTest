@@ -1,0 +1,11 @@
+﻿@page "/action"
+@using Blazor.AppTest.Components
+@using Blazor.AppTest.Constants
+
+@inherits ActionComponent
+
+<h2>Action Page</h2>
+
+<button class="btn btn-primary" @onclick="IncrementCount">@ButtonText</button>
+<button class="btn btn-primary">@CounterState.Value</button>
+<button type="submit" class="btn btn-primary" >Save</button>

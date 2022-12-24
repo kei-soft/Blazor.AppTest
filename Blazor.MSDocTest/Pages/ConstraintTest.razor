@@ -1,0 +1,15 @@
+﻿@page "/user/{Id:int}/{Option:bool?}"
+
+<h1>UserID is @Id</h1>
+
+<p>
+    Option: @Option
+</p>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public bool Option { get; set; }
+}
