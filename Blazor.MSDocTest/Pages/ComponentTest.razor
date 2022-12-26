@@ -1,0 +1,8 @@
+﻿@page "/componenttest"
+@using Blazor.AppTest.Components
+
+@inherits TestComponent
+
+<h3>Component Test</h3>
+
+<button class="btn btn-primary" @onclick="IncrementCount">@ButtonText (@Value)</button>

@@ -8,6 +8,24 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+<RenderFragmentTest>
+    <p>RenderFragmentTest</p>
+</RenderFragmentTest>
+
+
+<RenderFragmentTest>
+    <p>
+    @if (currentCount % 2 == 0)
+    {
+        <Child1/>
+    }
+    else
+    {
+        <Child2 />
+    }
+    </p>
+</RenderFragmentTest>
+
 @code {
     private int currentCount = 0;
 
