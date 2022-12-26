@@ -14,6 +14,16 @@
     <CascadingChild />
 </CascadingValue>
 
+<CascadingValue Value="@stringData">
+    <CascadingValue Value="@intValue">
+        <CascadingValue Value="@intValue2" Name="INTVALUE2">
+            <MultiCascadingChild />
+        </CascadingValue>
+    </CascadingValue>
+</CascadingValue>
+
 @code {
     private List<string>? stringData = new() { "Item 1", "Item 2" };
+    protected int intValue = 10;
+    protected int intValue2 = 20;
 }

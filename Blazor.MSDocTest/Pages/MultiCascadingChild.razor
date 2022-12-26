@@ -1,0 +1,21 @@
+﻿<h3>Multi CascadingChild</h3>
+
+@if (ExampleList != null)
+{
+    foreach (string example in ExampleList)
+    {
+        <h2>@example</h2>
+    }
+}
+<h2>@IntExample</h2>
+<h2>@IntExample2</h2>
+
+@code {
+
+    [CascadingParameter]
+    protected IEnumerable<string>? ExampleList { get; set; }
+    [CascadingParameter]
+    protected int IntExample { get; set; }
+    [CascadingParameter(Name ="INTVALUE2")]
+    protected int IntExample2 { get; set; }
+}
