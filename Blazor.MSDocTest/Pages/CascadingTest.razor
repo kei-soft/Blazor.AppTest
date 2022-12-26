@@ -1,0 +1,19 @@
+﻿@page "/cascadingtest"
+<h3>CascadingTest</h3>
+
+<h3>CascadingParent</h3>
+@if (stringData != null)
+{
+    foreach (string example in stringData)
+    {
+       <h1>@example</h1>
+    }
+}
+
+<CascadingValue Value="@stringData">
+    <CascadingChild />
+</CascadingValue>
+
+@code {
+    private List<string>? stringData = new() { "Item 1", "Item 2" };
+}

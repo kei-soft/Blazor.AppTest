@@ -1,0 +1,15 @@
+﻿<h3>CascadingChild</h3>
+
+@if (ExampleList != null)
+{
+    foreach (string example in ExampleList)
+    {
+        <h2>@example</h2>
+    }
+}
+
+@code {
+
+    [CascadingParameter]
+    protected IEnumerable<string>? ExampleList { get; set; }
+}
