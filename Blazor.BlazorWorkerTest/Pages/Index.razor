@@ -1,0 +1,30 @@
+﻿@page "/"
+
+@using Blazor.BlazorWorkerTest.Services
+@using BlazorWorker.BackgroundServiceFactory
+@using BlazorWorker.Core
+@inject IWorkerFactory workerFactory
+@inject IJSRuntime JS
+<PageTitle>Index</PageTitle>
+
+<button @onclick=OnClick>Do long running</button>
+<button @onclick=Alert>Do alert</button>
+
+@code {
+    int parameterValue = 5;
+    
+    public async Task OnClick(EventArgs _)
+    {
+        var worker = await workerFactory.CreateAsync();
+        
+        var service = await worker.CreateBackgroundServiceAsync<TestService>();
+
+        var localParameterValue = this.parameterValue;
+        var result = await service.RunAsync(s => s.TestMethod());
+    }
+
+    void Alert()
+    {
+        JS.InvokeVoidAsync("alert", "test");
+    }
+}
