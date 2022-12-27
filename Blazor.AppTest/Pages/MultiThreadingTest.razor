@@ -1,0 +1,26 @@
+﻿@page "/multithreadingtest"
+
+@inject IJSRuntime JS
+<h3>MultiThreading Test</h3>
+
+<input/>
+<button @onclick=DoLongRunningTask>Do long running task</button>
+<button @onclick=Alert>Do alert</button>
+@code {
+	async Task DoLongRunningTask()
+	{
+		Console.WriteLine("Starting long running task");
+		DateTime endTime = DateTime.UtcNow.AddSeconds(10);
+		while (DateTime.UtcNow < endTime)
+		{
+			Console.WriteLine("Task.Delay(100)");
+			await Task.Delay(1000);
+		}
+		Console.WriteLine("Finished long running task");
+	}
+
+	void Alert()
+	{
+		JS.InvokeVoidAsync("alert", "test");
+	}
+}
