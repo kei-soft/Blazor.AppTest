@@ -11,15 +11,11 @@
 <button @onclick=Alert>Do alert</button>
 
 @code {
-    int parameterValue = 5;
     
     public async Task OnClick(EventArgs _)
     {
         var worker = await workerFactory.CreateAsync();
-        
         var service = await worker.CreateBackgroundServiceAsync<TestService>();
-
-        var localParameterValue = this.parameterValue;
         var result = await service.RunAsync(s => s.TestMethod());
     }
 
