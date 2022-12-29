@@ -36,7 +36,7 @@
             Introduction
         </label>
         <div class="col-sm-10">
-            <InputNumber id="Introduction" class="form-control" placeholder="Introduction"
+            <InputText id="Introduction" class="form-control" placeholder="Introduction"
                          @bind-Value="requriedCheckModel.Introduction" />
             <ValidationMessage For="@(() => requriedCheckModel.Introduction)" />
         </div>
@@ -68,14 +68,16 @@
 
     protected override void OnInitialized()
     {
-        // Get Property Descriptor from instance with the Property name
-        PropertyDescriptor descriptor = TypeDescriptor.GetProperties(requriedCheckModel.GetType())["Introduction"];
+        //PropertyDescriptor? descriptor = TypeDescriptor.GetProperties(requriedCheckModel.GetType())["Introduction"];
 
-        //Search for Attribute
-        ChangeableRequired attribute =  (ChangeableRequired)descriptor.Attributes[typeof(ChangeableRequired)];
-
-        // Set Attribute to true to Disable
-        //attribute.Disabled = true;
+        //if (descriptor != null)
+        //{
+        //    ChangeableRequired? attribute = (ChangeableRequired?)descriptor.Attributes[typeof(ChangeableRequired)];
+        //    if (attribute != null)
+        //    {
+        //        attribute.Disabled = true;
+        //    }
+        //}
 
         base.OnInitialized();
     }

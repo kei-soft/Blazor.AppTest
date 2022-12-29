@@ -12,10 +12,9 @@ namespace Blazor.AppTest.Data
         [Required]
         [Range(1, 100)]
         public int Age { get; set; }
-
         [ChangeableRequired]
         public string Introduction { get; set; }
-
+        [Required]
         public Gender Gender { get; set; } = Gender.Male;
     }
 }
