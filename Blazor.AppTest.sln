@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.MSDocTest", "Blazor.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.AppTest", "Blazor.AppTest\Blazor.AppTest.csproj", "{E51C9B23-582A-41A6-900F-9CBF929A5BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.BlazorWorkerTest", "Blazor.BlazorWorkerTest\Blazor.BlazorWorkerTest.csproj", "{B496CC2E-0660-4ECB-9BC4-672F6F599F36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazorWorkerTest", "Blazor.BlazorWorkerTest\Blazor.BlazorWorkerTest.csproj", "{B496CC2E-0660-4ECB-9BC4-672F6F599F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidTest", "LiquidTest\LiquidTest.csproj", "{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B496CC2E-0660-4ECB-9BC4-672F6F599F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B496CC2E-0660-4ECB-9BC4-672F6F599F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B496CC2E-0660-4ECB-9BC4-672F6F599F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

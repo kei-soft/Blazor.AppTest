@@ -1,0 +1,28 @@
+﻿@page "/"
+
+@inject IModalDialogService ModalDialog
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<p>
+    <button @onclick="ShowMessageBoxOK" class="btn btn-primary">Show MessageBox - OK</button>
+</p>
+
+@code {
+
+    string LastMessageBoxResult = "Not Set";
+
+    async void ShowMessageBoxOK()
+    {
+        MessageBoxDialogResult result = await ModalDialog.ShowMessageBoxAsync("Simple Message Box", "Click OK, the close button or the background to Close", MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);
+
+        LastMessageBoxResult = result.ToString();
+        StateHasChanged();
+    }
+}
