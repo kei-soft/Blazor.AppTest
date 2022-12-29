@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.MSDocTest", "Blazor.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.AppTest", "Blazor.AppTest\Blazor.AppTest.csproj", "{E51C9B23-582A-41A6-900F-9CBF929A5BAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.BlazorWorkerTest", "Blazor.BlazorWorkerTest\Blazor.BlazorWorkerTest.csproj", "{B496CC2E-0660-4ECB-9BC4-672F6F599F36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazorWorkerTest", "Blazor.BlazorWorkerTest\Blazor.BlazorWorkerTest.csproj", "{B496CC2E-0660-4ECB-9BC4-672F6F599F36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
