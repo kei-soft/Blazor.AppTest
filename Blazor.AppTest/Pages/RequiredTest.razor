@@ -68,16 +68,16 @@
 
     protected override void OnInitialized()
     {
-        //PropertyDescriptor? descriptor = TypeDescriptor.GetProperties(requriedCheckModel.GetType())["Introduction"];
+        PropertyDescriptor? descriptor = TypeDescriptor.GetProperties(requriedCheckModel.GetType())["Introduction"];
 
-        //if (descriptor != null)
-        //{
-        //    ChangeableRequired? attribute = (ChangeableRequired?)descriptor.Attributes[typeof(ChangeableRequired)];
-        //    if (attribute != null)
-        //    {
-        //        attribute.Disabled = true;
-        //    }
-        //}
+        if (descriptor != null)
+        {
+            ChangeableRequired? attribute = (ChangeableRequired?)descriptor.Attributes[typeof(ChangeableRequired)];
+            if (attribute != null)
+            {
+                attribute.Disabled = true;
+            }
+        }
 
         base.OnInitialized();
     }
