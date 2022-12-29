@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.AppTest", "Blazor.Ap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazorWorkerTest", "Blazor.BlazorWorkerTest\Blazor.BlazorWorkerTest.csproj", "{B496CC2E-0660-4ECB-9BC4-672F6F599F36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiquidTest", "LiquidTest\LiquidTest.csproj", "{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiquidTest", "LiquidTest\LiquidTest.csproj", "{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.ToastTest", "Blazor.ToastTest\Blazor.ToastTest.csproj", "{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
