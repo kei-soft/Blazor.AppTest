@@ -1,0 +1,73 @@
+﻿@page "/lifecycletest"
+
+<PageTitle>LifeCycleTest</PageTitle>
+<h1>----------------------------------------------</h1>
+<h1>LifeCycleTest</h1>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me (@currentCount)</button>
+
+<h3>@logMessage</h3>
+
+@code {
+
+    [Parameter]
+    public int Increment { get; set; } = 1;
+
+    private int currentCount = 0;
+    private string logMessage = string.Empty;
+
+    private void IncrementCount()
+    {
+        currentCount += Increment;
+    }
+
+
+    protected override void OnInitialized()
+    {
+        logMessage += "OnInitialized → ";
+        base.OnInitialized();
+    }
+
+    protected override Task OnInitializedAsync()
+    {
+        logMessage += "OnInitializedAsync → ";
+        return base.OnInitializedAsync();
+    }
+
+    public override Task SetParametersAsync(ParameterView parameters)
+    {
+        logMessage += "SetParametersAsync(ParameterView parameters) → ";
+        return base.SetParametersAsync(parameters);
+    }
+
+    protected override void OnParametersSet()
+    {
+        logMessage += "OnParametersSet → ";
+        base.OnParametersSet();
+    }
+
+    protected override Task OnParametersSetAsync()
+    {
+        logMessage += "OnParametersSetAsync → ";
+        return base.OnParametersSetAsync();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        logMessage += "OnAfterRender(" + firstRender + ") → ";
+        base.OnAfterRender(firstRender);
+    }
+
+    protected override Task OnAfterRenderAsync(bool firstRender)
+    {
+        logMessage += "OnAfterRenderAsync(" + firstRender + ") → ";
+        return base.OnAfterRenderAsync(firstRender);
+    }
+
+    protected override bool ShouldRender()
+    {
+        logMessage += "ShouldRender → ";
+        return base.ShouldRender();
+    }
+
+}
