@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazorWorkerTest", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiquidTest", "LiquidTest\LiquidTest.csproj", "{BFEDAD1F-FE90-49C9-A994-F1A60E4E39FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.ToastTest", "Blazor.ToastTest\Blazor.ToastTest.csproj", "{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.ToastTest", "Blazor.ToastTest\Blazor.ToastTest.csproj", "{520C2EA7-A509-4DDB-B0D7-FA8B7A0C3FB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

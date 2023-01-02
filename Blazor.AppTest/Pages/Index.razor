@@ -9,3 +9,18 @@ Welcome to your new app.
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 <Counter Increment="10" />
+
+<ChildEventCallBackTest ValueChanged="ValudChange" />
+<p>
+    <h2>@InputText</h2>
+</p>
+
+@code
+{
+    private string InputText;
+
+    private void ValudChange(string inputText)
+    {
+        InputText = inputText;
+    }
+}

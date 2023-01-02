@@ -1,0 +1,16 @@
+﻿<h3>ChildEventCallBackTest</h3>
+
+<input type="text" value="@InputTextString" @onchange="ChangedAsync" />
+
+@code {
+    public string? InputTextString { get; set; }
+
+    [Parameter] 
+    public EventCallback<string> ValueChanged { get; set; }
+
+    private async void ChangedAsync(ChangeEventArgs args)
+    {
+        InputTextString = args.Value.ToString();
+        await ValueChanged.InvokeAsync(InputTextString);
+    }
+}
