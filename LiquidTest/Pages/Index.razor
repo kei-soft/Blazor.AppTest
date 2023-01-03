@@ -2,27 +2,48 @@
 
 @inject IModalDialogService ModalDialog
 
-<PageTitle>Index</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<p>
+    <button @onclick="ShowMessageBox" class="btn btn-primary">Show MessageBox</button>
+    <br />
+    @LastMessageBoxResult
+</p>
 
 <p>
-    <button @onclick="ShowMessageBoxOK" class="btn btn-primary">Show MessageBox - OK</button>
+    <button @onclick="ShowPopupSignUp" class="btn btn-primary">Show Sign Up Popup</button>
+    <br />
+    @Message
 </p>
 
 @code {
 
     string LastMessageBoxResult = "Not Set";
+    string Message = "Requesting Data From User";
 
-    async void ShowMessageBoxOK()
+    async void ShowMessageBox()
     {
-        MessageBoxDialogResult result = await ModalDialog.ShowMessageBoxAsync("Simple Message Box", "Click OK, the close button or the background to Close", MessageBoxButtons.OK, MessageBoxDefaultButton.Button1);
+        MessageBoxDialogResult result = await ModalDialog.ShowMessageBoxAsync("Simple Message Box", "Click OK/Cancel", MessageBoxButtons.OKCancel);
 
         LastMessageBoxResult = result.ToString();
+
+        StateHasChanged();
+    }
+
+    async void ShowPopupSignUp()
+    {
+        var parameters = new ModalDialogParameters();
+        parameters.Add("FormId", 11);
+
+        ModalDialogResult result = await ModalDialog.ShowDialogAsync<SignUpForm>("Sign Up Form", null, parameters);
+
+        if (result.Success)
+        {
+            Message = "User info : " + result.ReturnParameters.Get<string>("FullName");
+        }
+        else
+        {
+            Message = "User Cancelled";
+        }
+
         StateHasChanged();
     }
 }
