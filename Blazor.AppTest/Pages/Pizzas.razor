@@ -20,6 +20,7 @@ else
                 <th>| Vegetarian </th>
                 <th>| Vegan </th>
                 <th>| Price | </th>
+                <th>| Edit | </th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +32,9 @@ else
                     <td>@pizza.Vegetarian</td>
                     <td>@pizza.Vegan</td>
                     <td>@pizza.Price</td>
+                    <td>
+                        <a href="@($"blazorformtest/{pizza.PizzaId}")" class="btn btn-primary m-1">Edit</a>
+                    </td>
                 </tr>
             }
         </tbody>
