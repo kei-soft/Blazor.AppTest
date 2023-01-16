@@ -1,0 +1,33 @@
+﻿@page "/"
+
+@using blazejewicz.Blazor.BeforeUnload
+@using System
+@implements IDisposable
+@inject BeforeUnload BeforeUnload
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    protected override void OnInitialized()
+    {
+        BeforeUnload.BeforeUnloadHandler += BeforeUnloadHandler;
+    }
+
+    public void Dispose()
+    {
+        BeforeUnload.BeforeUnloadHandler -= BeforeUnloadHandler;
+    }
+
+    void BeforeUnloadHandler(object? sender, BeforeUnloadArgs args)
+    {
+        args.CancelRequested = true;
+        args.ReturnValue = "Please save your data";
+    }
+}
