@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+<PageTitle>Index</PageTitle>
+
+<h1>Sessoin Storage Key</h1>
+
+<input type="text" value="@sessionStorageKey" @onchange="ChangedAsync" />
+
+@code {
+    private string sessionStorageKey { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        sessionStorageKey = await sessionStorage.GetItemAsync<string>("key");
+    }
+
+    private async void ChangedAsync(ChangeEventArgs args)
+    {
+        sessionStorageKey = args.Value.ToString();
+        await sessionStorage.SetItemAsync("key", sessionStorageKey);
+    }
+}
