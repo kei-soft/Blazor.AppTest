@@ -1,0 +1,22 @@
+﻿@page "/"
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+<PageTitle>Index</PageTitle>
+
+<h1>Local Storage Key</h1>
+
+<input type="text" value="@localStorageKey" @onchange="ChangedAsync" />
+
+@code {
+    private string localStorageKey { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        localStorageKey = await localStorage.GetItemAsync<string>("key");
+    }
+
+    private async void ChangedAsync(ChangeEventArgs args)
+    {
+        localStorageKey = args.Value.ToString();
+        await localStorage.SetItemAsync("key", localStorageKey);
+    }
+}
