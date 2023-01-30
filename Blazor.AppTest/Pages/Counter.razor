@@ -4,9 +4,14 @@
 
 <h1>Counter</h1>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me (@currentCount)</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Click (@currentCount)</button>
+
+<button class="btn btn-primary" disabled="@isBusy" @onclick="IncrementCountIsBusy">Click IsBusy (@currentCount)</button>
 
 @code {
+
+    private bool isBusy = false;
+    private bool isShouldRender = true;
 
     [Parameter]
     public int Increment { get; set; } = 1;
@@ -15,19 +20,46 @@
 
     private void IncrementCount()
     {
+        isShouldRender = true;
         currentCount += Increment;
+    }
+
+    public async Task IncrementCountIsBusy()
+    {
+        if(isBusy)
+        {
+            return;
+        }
+
+        isShouldRender = false;
+
+        isBusy = true;
+
+        try
+        {
+            await Task.Delay(2000);
+            currentCount += Increment;
+        }
+        finally
+        {
+            isBusy = false;
+        }
     }
 
     protected override bool ShouldRender()
     {
-        //return false;
-        if (currentCount % 2 == 0)
+        if (isShouldRender)
         {
-            return true;
+            if (currentCount % 2 == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
+
+        return true;
     }
 }
