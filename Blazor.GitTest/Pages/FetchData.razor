@@ -1,0 +1,53 @@
+﻿ @page "/fetchdata"
+@using Blazor.GitTest.Models;
+@inject HttpClient Http
+@inject GitHubClient GitHubClient
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Search Github 'keisoft'</h1>
+
+@if (repositoryList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FullName</th>
+                <th>Description</th>
+                <th>Statistics</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var repo in repositoryList)
+            {
+                <tr>
+                    <td><div class="github-title">@repo.FullName</div></td>
+                    <td><div class="github-description">@repo.Description</div></td>
+                    <td>
+                        <div class="github-statistics">
+                            <div class="github-forks"> @repo.ForksCount Forks</div>
+                            <div class="github-stargazers"> @repo.StargazersCount Stars</div>
+                            <div class="github-watchers"> @repo.SubscribersCount Watchers</div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Repository>? repositoryList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await GitHubClient.SearchRepositories("keisoft", 1, 20);
+
+        repositoryList = result.Items;
+    }
+}
+ 

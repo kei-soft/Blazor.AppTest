@@ -1,0 +1,20 @@
+﻿<section style="margin-bottom: 10px">
+    <input type="text" class="form-control" placeholder="Input Search Text" 
+           @bind-value="@SearchText" @bind-value:event="oninput" @onkeyup="@Onkeyup" />
+</section>
+
+@code {
+
+    public string? SearchText { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnSearchChanged { get; set; }
+
+    public async void Onkeyup(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            await OnSearchChanged.InvokeAsync(SearchText);
+        }
+    }
+}
