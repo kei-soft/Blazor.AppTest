@@ -10,7 +10,9 @@
             Name
         </label>
         <div class="col-sm-10">
-            <InputText id="Name" class="form-control" placeholder="Name"
+            @*<InputText id="Name" class="form-control" placeholder="Name"
+                       @bind-Value="exampleModel.Name" />*@
+            <OnInputEventInputText id="Name" class="form-control" placeholder="Name"
                        @bind-Value="exampleModel.Name" />
             <ValidationMessage For="@(() => exampleModel.Name)" />
         </div>

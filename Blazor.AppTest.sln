@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.SessionStorageTest",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazoredTest", "Blazor.BlazoredTest\Blazor.BlazoredTest.csproj", "{F1EB6E11-1919-4921-8AA4-A2BB5CE58896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.GitTest", "Blazor.GitTest\Blazor.GitTest.csproj", "{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.GitTest", "Blazor.GitTest\Blazor.GitTest.csproj", "{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
