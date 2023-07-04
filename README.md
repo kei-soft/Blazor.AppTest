@@ -1,2 +1,2 @@
 # Blazor.AppTest
-Blog : https://kjcoder.tistory.com/category/C%23/Blazor
+Blog : https://kjun.kr/category/C%23/Blazor
