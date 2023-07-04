@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Components;
+@using Microsoft.JSInterop;
+@using System.Globalization;
+
+<strong>Culture:</strong>
+<select class="form-control" @bind="Culture" style="width:300px; margin-left:10px;">
+    @foreach (var culture in cultures)
+    {
+        <option value="@culture">@culture.DisplayName</option>
+    }
+</select>
+
+@code{
+    [Inject]
+    public NavigationManager NavManager { get; set; }
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    CultureInfo[] cultures = new[]
+    {
+        new CultureInfo("ko-kr"),
+        new CultureInfo("en-US")
+    };
+
+    CultureInfo Culture
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var js = (IJSInProcessRuntime)JSRuntime;
+                // change culture
+                js.InvokeVoid("blazorCulture.set", value.Name);
+                // refresh
+                NavManager.NavigateTo(NavManager.Uri, forceLoad: true);
+            }
+        }
+    }
+}

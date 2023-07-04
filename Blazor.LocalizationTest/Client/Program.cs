@@ -1,5 +1,8 @@
+using System.Globalization;
+
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.JSInterop;
 
 namespace Blazor.LocalizationTest
 {
@@ -13,9 +16,31 @@ namespace Blazor.LocalizationTest
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+            // Localization
             builder.Services.AddLocalization();
 
-            await builder.Build().RunAsync();
+            var host = builder.Build();
+
+            // Localization Selector
+            var jsInterop = host.Services.GetRequiredService<IJSRuntime>();
+            var result = await jsInterop.InvokeAsync<string>("blazorCulture.get");
+
+            CultureInfo culture;
+
+            if (result != null)
+            {
+                culture = new CultureInfo(result);
+            }
+            else
+            {
+                // Default
+                culture = new CultureInfo("ko-KR");
+            }
+
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+            await host.RunAsync();
         }
     }
 }
