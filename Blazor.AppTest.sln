@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BlazoredTest", "Blaz
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.GitTest", "Blazor.GitTest\Blazor.GitTest.csproj", "{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.LocalizationTest", "Blazor.LocalizationTest\Blazor.LocalizationTest.csproj", "{D99B81FF-C677-4538-9FA4-DA8B6715FF16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEDC49D2-981F-4DF4-9E98-95E33CE65E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D99B81FF-C677-4538-9FA4-DA8B6715FF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99B81FF-C677-4538-9FA4-DA8B6715FF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99B81FF-C677-4538-9FA4-DA8B6715FF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99B81FF-C677-4538-9FA4-DA8B6715FF16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
