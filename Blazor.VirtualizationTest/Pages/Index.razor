@@ -1,0 +1,74 @@
+﻿@page "/"
+
+<PageTitle>Cars</PageTitle>
+
+@if (cars == null)
+{
+    <p><em>Loading cars...</em></p>
+}
+else
+{
+    <table class="table" height="800px">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+@*          @foreach (var car in cars)
+          {
+                <tr>
+                  <td>@car.Id</td>
+                  <td>@car.Name</td>
+                  <td>@car.Cost</td>
+                </tr>
+          }*@
+            
+            <Virtualize Items="cars" Context="car" OverscanCount="5" ItemSize="15" SpacerElement="tr">
+                <tr>
+                    <td>@car.Id</td>
+                    <td>@car.Name</td>
+                    <td>@car.Cost</td>
+                </tr>
+            </Virtualize>
+            
+        </tbody>
+    </table>
+}
+
+@code{
+    private List<Car> cars;
+
+    protected override async Task OnInitializedAsync()
+    {
+        cars = await MakeCars(1000);
+    }
+
+    private async Task<List<Car>> MakeCars(int count)
+    {
+        List<Car> myCarList = new List<Car>();
+
+        for (int i = 0; i < count; i++)
+        {
+            var car = new Car()
+                {
+                    Id = Guid.NewGuid(),
+                    Name = $"Car {i}",
+                    Cost = i * Random.Shared.Next(50,100)
+                };
+
+            myCarList.Add(car);
+        }
+        return await Task.FromResult(myCarList);
+    }
+
+
+    public class Car
+    {
+        public Guid Id { get; set; }
+        public string? Name { get; set; }
+        public int Cost { get; set; }
+    }
+}
