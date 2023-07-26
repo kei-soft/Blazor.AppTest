@@ -1,0 +1,32 @@
+﻿@page "/"
+@using Blazor.ClipBoardTest.Services;
+
+@inject ClipboardService ClipboardService;
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Copy Clipboard</PageTitle>
+
+<p role="status">GUID: @guid</p>
+<button class="btn btn-primary" @onclick="CreateGUID">Carete GUID</button>
+<button class="btn btn-primary" @onclick="CopyTextToClipboard">Copy</button>
+
+@code {
+    private string guid = string.Empty;
+
+    private void CreateGUID()
+    {
+        guid = Guid.NewGuid().ToString();
+    }
+
+    private async Task CopyTextToClipboard()
+    {
+        try
+        {
+            await ClipboardService.WriteTextAsync(guid);
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine("Clipboard Error " + ex.ToString());
+        }
+    }
+}
