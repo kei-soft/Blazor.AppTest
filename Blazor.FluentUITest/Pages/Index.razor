@@ -1,0 +1,39 @@
+﻿@page "/"
+
+@using Microsoft.Fast.Components.FluentUI
+
+<PageTitle>Index</PageTitle>
+
+<FluentCard Style="margin:2px">
+    <h2>Hello Fluent UI!</h2>
+    <FluentButton Appearance="@Appearance.Accent">Click Me</FluentButton>
+</FluentCard>
+
+<FluentAccordion ExpandMode="AccordionExpandMode.Single">
+    <FluentAccordionItem Heading="Panel one">
+        Panel one contet
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Panel two">
+        Panel two content
+    </FluentAccordionItem>
+    <FluentAccordionItem Heading="Panel three">
+        Panel three content
+    </FluentAccordionItem>
+</FluentAccordion>
+
+
+<p>Default</p>
+<FluentAnchor Href="#">Anchor</FluentAnchor>
+
+<p>With target</p>
+<FluentAnchor Href="https://microsoft.com" Target="_blank">Anchor</FluentAnchor>
+
+<p>With aria-label</p>
+<FluentAnchor Href="#" aria-label="Anchor with aria-label"></FluentAnchor>
+
+<p>Show a minumum of 6 weeks</p>
+<FluentCalendar MinWeeks="6" />
+
+@code {
+
+}
