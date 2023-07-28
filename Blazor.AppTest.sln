@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.BasicTest", "Blazor.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.VirtualizationTest", "Blazor.VirtualizationTest\Blazor.VirtualizationTest.csproj", "{DFC7270C-2FE9-4080-9439-A6E6E8D3306E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.ClipBoardTest", "Blazor.ClipBoardTest\Blazor.ClipBoardTest.csproj", "{09704C20-F3AB-4927-A8BE-08BBD16C9808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.ClipBoardTest", "Blazor.ClipBoardTest\Blazor.ClipBoardTest.csproj", "{09704C20-F3AB-4927-A8BE-08BBD16C9808}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.EventCallBackTest", "Blazor.EventCallBackTest\Blazor.EventCallBackTest.csproj", "{2858F36E-E63D-4457-A8B1-F3F49CF671EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{09704C20-F3AB-4927-A8BE-08BBD16C9808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09704C20-F3AB-4927-A8BE-08BBD16C9808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09704C20-F3AB-4927-A8BE-08BBD16C9808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2858F36E-E63D-4457-A8B1-F3F49CF671EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2858F36E-E63D-4457-A8B1-F3F49CF671EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2858F36E-E63D-4457-A8B1-F3F49CF671EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2858F36E-E63D-4457-A8B1-F3F49CF671EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

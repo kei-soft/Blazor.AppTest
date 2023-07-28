@@ -1,0 +1,8 @@
+﻿<h1>Select Count : @SelectedCount</h1>
+
+@foreach (var data in DataList)
+{
+    <ItemComponent OnSelection="SelectionChanged">
+        <h3>@data</h3>
+    </ItemComponent>
+}
