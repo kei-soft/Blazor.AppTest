@@ -1,0 +1,27 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+<TestButton Text="First Button" ButtonStyle="ButtonStyle.Primary" />
+<TestButton Text="Secondary Button" ButtonStyle="ButtonStyle.Secondary" />
+<TestButton Text="Outlined Button" ButtonStyle="ButtonStyle.Outlined" OnClick="Onclick" />
+<TestButton Text="Disabled FullWidth Button"
+            Style="border: 3px solid blue;" Class="mt-4" IsDisabled="true" IsFullWidth="true" />
+
+<button style="@testButtonStyle" onclick="@Onclick">
+    test
+</button>
+
+@code
+{
+    private bool isTest {get;set;} = false;
+
+    private string testButtonStyle => new StyleBuilder()
+                                    .AddStyle("width", "100%", isTest)
+                                    .AddStyle("color", "red", !isTest)
+                                    .Build();
+
+    private void Onclick(MouseEventArgs e)
+    {
+        isTest = !isTest;
+    }
+}

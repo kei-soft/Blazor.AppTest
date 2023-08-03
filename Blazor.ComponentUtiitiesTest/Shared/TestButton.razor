@@ -1,0 +1,62 @@
+﻿<button class="@buttonClass" style="@buttonStyle @Style" disabled="@IsDisabled" @onclick="OnClick">
+    @Text 
+</button>
+
+@code {
+
+    /// <summary>
+    /// 적용할 Style
+    /// </summary>
+    [Parameter]
+    public ButtonStyle ButtonStyle { get; set; } = ButtonStyle.Primary;
+
+    /// <summary>
+    /// 버튼에 표시될 Text
+    /// </summary>
+    [Parameter]
+    public string? Text { get; set; }
+
+    /// <summary>
+    /// 너비 100% 로 할것인지 여부
+    /// </summary>
+    [Parameter]
+    public bool IsFullWidth { get; set; }
+
+    /// <summary>
+    /// Disable 여부
+    /// </summary>
+    [Parameter]
+    public bool IsDisabled { get; set; }
+
+    /// <summary>
+    /// 클릭 이벤트
+    /// </summary>
+    [Parameter]
+    public EventCallback<MouseEventArgs> OnClick { get; set; }
+
+    /// <summary>
+    /// Class
+    /// </summary>
+    [Parameter]
+    public string? Class { get; set; }
+
+    /// <summary>
+    /// Style
+    /// </summary>
+    [Parameter]
+    public string? Style { get; set; }
+
+    private string buttonClass => new CssBuilder()
+                                .AddClass("button")
+                                .AddClass("primary", ButtonStyle == ButtonStyle.Primary) // ButtonStyle 이 Primary 인 경우 primary 적용
+                                .AddClass("secondary", ButtonStyle == ButtonStyle.Secondary) // ButtonStyle 이 Secondary 인 경우 secondary 적용
+                                .AddClass("outlined", ButtonStyle == ButtonStyle.Outlined) // ButtonStyle 이 Outlined 인 경우 outlined 적용
+                                .AddClass("disabled", IsDisabled)
+                                .AddClass("Class", !string.IsNullOrWhiteSpace(Class))
+                                .Build();
+
+    private string buttonStyle => new StyleBuilder()
+                                .AddStyle("width", "100%", IsFullWidth)
+                                .AddStyle("color", "red", IsFullWidth)
+                                .Build();
+}

@@ -37,9 +37,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.VirtualizationTest",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.ClipBoardTest", "Blazor.ClipBoardTest\Blazor.ClipBoardTest.csproj", "{09704C20-F3AB-4927-A8BE-08BBD16C9808}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.EventCallBackTest", "Blazor.EventCallBackTest\Blazor.EventCallBackTest.csproj", "{2858F36E-E63D-4457-A8B1-F3F49CF671EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.EventCallBackTest", "Blazor.EventCallBackTest\Blazor.EventCallBackTest.csproj", "{2858F36E-E63D-4457-A8B1-F3F49CF671EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.FluentUITest", "Blazor.FluentUITest\Blazor.FluentUITest.csproj", "{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.FluentUITest", "Blazor.FluentUITest\Blazor.FluentUITest.csproj", "{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.ComponentUtiitiesTest", "Blazor.ComponentUtiitiesTest\Blazor.ComponentUtiitiesTest.csproj", "{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
