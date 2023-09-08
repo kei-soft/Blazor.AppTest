@@ -41,7 +41,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.EventCallBackTest", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.FluentUITest", "Blazor.FluentUITest\Blazor.FluentUITest.csproj", "{B6C88F39-2E5A-48F7-8DD2-993218DFCF90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.ComponentUtiitiesTest", "Blazor.ComponentUtiitiesTest\Blazor.ComponentUtiitiesTest.csproj", "{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazor.ComponentUtiitiesTest", "Blazor.ComponentUtiitiesTest\Blazor.ComponentUtiitiesTest.csproj", "{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C7743212-B870-4FEC-B6B6-612C6CC92C64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.APITest.Server", "Blazor.APITest\Server\Blazor.APITest.Server.csproj", "{64E6F9E5-B80D-485F-9425-D48CB9654F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.APITest.Client", "Blazor.APITest\Client\Blazor.APITest.Client.csproj", "{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.APITest.Shared", "Blazor.APITest\Shared\Blazor.APITest.Shared.csproj", "{E1CD1D9B-C2E5-4717-A84B-32249004DF39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,9 +137,26 @@ Global
 		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79411B69-0F9C-4923-B7EA-BBC9FC5CD820}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64E6F9E5-B80D-485F-9425-D48CB9654F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64E6F9E5-B80D-485F-9425-D48CB9654F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64E6F9E5-B80D-485F-9425-D48CB9654F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64E6F9E5-B80D-485F-9425-D48CB9654F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1CD1D9B-C2E5-4717-A84B-32249004DF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CD1D9B-C2E5-4717-A84B-32249004DF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CD1D9B-C2E5-4717-A84B-32249004DF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CD1D9B-C2E5-4717-A84B-32249004DF39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64E6F9E5-B80D-485F-9425-D48CB9654F95} = {C7743212-B870-4FEC-B6B6-612C6CC92C64}
+		{BC2D0776-58A1-4AFF-BC2A-B4EBE109AD6E} = {C7743212-B870-4FEC-B6B6-612C6CC92C64}
+		{E1CD1D9B-C2E5-4717-A84B-32249004DF39} = {C7743212-B870-4FEC-B6B6-612C6CC92C64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {032C4127-5159-42D0-80A8-7AD9463BEBDF}

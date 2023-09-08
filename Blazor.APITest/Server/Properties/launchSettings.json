@@ -1,0 +1,31 @@
+{
+    "iisSettings": {
+      "windowsAuthentication": false,
+      "anonymousAuthentication": true,
+      "iisExpress": {
+        "applicationUrl": "http://localhost:51127",
+        "sslPort": 44391
+      }
+    },
+    "profiles": {
+      "Blazor.APITest.Server": {
+        "commandName": "Project",
+        "dotnetRunMessages": true,
+        "launchBrowser": true,
+        "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
+        "launchUrl": "swagger", // 시작페이지 swagger 로 설정
+        "applicationUrl": "https://localhost:7194;http://localhost:5170",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      },
+      "IIS Express": {
+        "commandName": "IISExpress",
+        "launchBrowser": true,
+        "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      }
+    }
+  }
